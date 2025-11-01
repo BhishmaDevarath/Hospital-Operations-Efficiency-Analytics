@@ -73,9 +73,18 @@ The SQL database consists of **10 core tables**:
 ---
 
 ## 📊 PowerBI Dashboards
-![Telecom Churn Dashboard](./PowerBI%20Dashboard/TelecomChurnDashboard.jpeg)
-![Telecom Churn Dashboard](./PowerBI%20Dashboard/TelecomChurnDashboard.jpeg)
-![Telecom Churn Dashboard](./PowerBI%20Dashboard/TelecomChurnDashboard.jpeg)
+
+- Financial Summary Dashboard
+
+![Financial Summary Dashboard](./Power%20BI%20Dashboard/Financial%20Summary.jpeg)
+
+- Operational Overview Dashboard
+
+![Operational Overview Dashboard](./Power%20BI%20Dashboard/Operational%20Overview.jpeg)
+
+- Staff Efficiency Dashboard
+
+![Staff Efficiency Dashboard](./Power%20BI%20Dashboard/Staff%20Efficiency.jpeg)
 
 ---
 
