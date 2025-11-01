@@ -1,0 +1,110 @@
+A. Core Operational Metrics
+
+1. Total Admissions
+Total Admissions = COUNTROWS(Admissions)
+
+2. Total Surgeries
+Total Surgeries = COUNTROWS(Surgeries)
+
+3. Average Length of Stay (LOS)
+Avg LOS = AVERAGE(Admissions[LengthOfStay])
+
+4. Readmission Rate (%)
+Readmission Rate (%) =
+DIVIDE(
+    CALCULATE(COUNTROWS(Admissions), Admissions[ReadmissionFlag] = 1),
+    [Total Admissions]
+) * 100
+
+5. Admission Outcome Breakdown
+Recovered Admissions = CALCULATE(COUNTROWS(Admissions), Admissions[Outcome] = "Recovered")
+Deceased Admissions = CALCULATE(COUNTROWS(Admissions), Admissions[Outcome] = "Deceased")
+Transferred Admissions = CALCULATE(COUNTROWS(Admissions), Admissions[Outcome] = "Transferred")
+
+B. Staff & Resource Utilization Metrics
+
+1. Total Staff
+Total Staff = COUNTROWS(Staff)
+
+2. Active Staff
+Active Staff = CALCULATE(COUNTROWS(Staff), Staff[Status] = "Active")
+
+3. Average Experience (Years)
+Avg Experience = AVERAGE(Staff[ExperienceYears])
+
+4. Average Salary
+Avg Salary = AVERAGE(Staff[Salary])
+
+5. Staff Utilization (%)
+Avg Staff Utilization (%) = AVERAGE(ResourceUtilizationSnapshots[StaffUtilizationRate]) * 100
+
+C. Bed & Equipment Utilization
+
+1. Average Bed Occupancy (%)
+Avg Bed Occupancy (%) = AVERAGE(ResourceUtilizationSnapshots[BedOccupancyRate]) * 100
+
+2. Average Equipment Utilization (%)
+Avg Equipment Utilization (%) = AVERAGE(ResourceUtilizationSnapshots[EquipmentUtilizationRate]) * 100
+
+3. Average ER Wait Time (Minutes)
+Avg ER Wait (Minutes) = AVERAGE(ResourceUtilizationSnapshots[ERWaitTimeMinutes])
+
+D. Surgery Performance Metrics
+
+1. Average Surgery Duration (Minutes)
+Avg Surgery Duration (Minutes) = AVERAGE(Surgeries[DurationMinutes])
+
+2. Complication Count
+Complication Count = CALCULATE(COUNTROWS(Surgeries), Surgeries[ComplicationFlag] = 1)
+
+3. Complication Rate (%)
+Complication Rate (%) =
+DIVIDE(
+    [Complication Count],
+    [Total Surgeries]
+) * 100
+
+E. Financial KPIs
+
+1. Total Revenue (Billed Amount)
+Total Revenue = SUM(Financials[BilledAmount])
+
+2. Total Cost
+Total Cost = SUM(Financials[TotalCost])
+
+3. Avg Profit Margin (%)
+Avg Profit Margin (%) = AVERAGE(Financials[ProfitMargin]) * 100
+
+4. Avg Insurance Coverage (%)
+Avg Insurance Coverage (%) = AVERAGE(Financials[InsuranceCoveragePct]) * 100
+
+5. Net Profit
+Net Profit = [Total Revenue] - [Total Cost]
+
+F. Regional / Hospital-Level Rollups
+
+Admissions per Hospital
+Admissions per Hospital =
+DIVIDE(
+    [Total Admissions],
+    DISTINCTCOUNT(Hospitals[HospitalID])
+)
+
+2. Surgeries per Hospital
+Surgeries per Hospital =
+DIVIDE(
+    [Total Surgeries],
+    DISTINCTCOUNT(Hospitals[HospitalID])
+)
+
+3. Avg Beds per Hospital
+Avg Beds per Hospital = AVERAGE(Hospitals[NumBeds])
+
+G. Composite Efficiency Score (Optional for Power KPI Visual)
+
+Efficiency Index
+Efficiency Index =
+([Avg Bed Occupancy (%)] * 0.3) +
+([Avg Staff Utilization (%)] * 0.3) +
+((100 - [Avg ER Wait (Minutes)] / 60 * 100) * 0.2) +
+([Avg Profit Margin (%)] * 0.2)
