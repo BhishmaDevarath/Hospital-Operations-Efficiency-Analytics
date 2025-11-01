@@ -1,0 +1,11 @@
+HospitalID,HospitalName,Region,City,NumBeds,AccreditationStatus,OwnershipType
+1,Hospital_01,North,Delhi,437,B,Public
+2,Hospital_02,South,Bengaluru,955,A+,Charity
+3,Hospital_03,Central,Mumbai,758,B+,Public
+4,Hospital_04,North,Mumbai,638,A,Public
+5,Hospital_05,Central,Lucknow,240,A+,Charity
+6,Hospital_06,South,Jaipur,240,B+,Public
+7,Hospital_07,West,Lucknow,152,B,Public
+8,Hospital_08,South,Pune,879,B,Private
+9,Hospital_09,South,Chennai,641,B,Public
+10,Hospital_10,North,Pune,737,A+,Private
