@@ -74,17 +74,17 @@ The SQL database consists of **10 core tables**:
 
 ## 📊 PowerBI Dashboards
 
-- Financial Summary Dashboard
-
-
-
 - Operational Overview Dashboard
 
+![Operational_Overview](./Power%20BI%20Dashboard/Operational_Overview.jpeg)
 
+- Financial Summary Dashboard
+
+![Financial_Summary](./Power%20BI%20Dashboard/Financial_Summary.jpeg)
 
 - Staff Efficiency Dashboard
 
-
+![Staff Efficiency](./Power%20BI%20Dashboard/Staff_Efficiency.jpeg)
 
 ---
 
